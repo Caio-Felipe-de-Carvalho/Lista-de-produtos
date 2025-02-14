@@ -1,0 +1,128 @@
+    body {
+      height: auto;
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      background-color: hsl(20, 50%, 98%);
+      margin: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    h1{
+      display: flex;
+      padding-inline-start: 10px;
+    }
+
+    /*conteiners*/
+
+    .grid-conteiner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 70%;
+    }
+
+    .conteiner {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      width: 200px;
+      height: auto;
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px solid transparent;/
+    }
+
+    .conteiner img {
+      width: 100%;
+      border-radius: 1rem;
+      border: 2px solid hsl(20, 50%, 98%);
+    }
+
+    .conteiner img:hover {
+      border: 2px solid hsl(14, 86%, 42%);
+    }
+
+    /* Botão */
+
+    .add-to-cart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: hsl(0, 0%, 100%);
+      color: hsl(0, 0%, 0%);
+      padding: 10px 20px;
+      border: 1.5px solid hsl(7, 20%, 60%);
+      border-radius: 16px;
+      cursor: pointer;
+      position: relative;
+      width: 200px;
+      height: 40px;
+      transition: background-color 0.3s, color 0.3s; 
+    }
+
+    .add-to-cart .decrease,
+    .add-to-cart .increase,
+    .add-to-cart .quantity {
+      display: none;
+    }
+
+    .add-to-cart:hover .decrease,
+    .add-to-cart:hover .increase,
+    .add-to-cart:hover .quantity {
+      display: inline-block;
+    }
+
+    .add-to-cart:hover .quantity {
+      font-size: 18px;
+      margin: 0 5px;
+    }
+
+    .add-to-cart .decrease,
+    .add-to-cart .increase {
+      width: 20px;
+      height: 20px;
+      margin: 0 10px;
+    }
+
+    .add-to-cart .button-text {
+      display: inline-block;
+    }
+
+    .add-to-cart:hover .button-text {
+      display: none;
+    }
+
+    .add-to-cart:hover {
+      background-color: hsl(14, 86%, 42%);
+      color: hsl(0, 0%, 100%);
+      border: none;
+    }
+
+    /*Informações*/
+
+    .conteiner .comida {
+      color: hsl(14, 65%, 9%);
+    }
+
+    .conteiner .nome-da-comida {
+      color: hsl(12, 20%, 44%);
+    }
+
+    .conteiner .preco {
+      color: hsl(14, 86%, 42%);
+    }
+
+    /*Card*/
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background-color: red;
+      width: 200px;
+      padding: 20px;
+      border-radius: 8px;
+      color: white;
+    }
