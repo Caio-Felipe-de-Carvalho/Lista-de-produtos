@@ -1,10 +1,10 @@
     body {
       height: auto;
-      width: 100%;
+      width: 100vh;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
       background-color: hsl(20, 50%, 98%);
-      margin: 40px;
+      margin: 60px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -13,32 +13,38 @@
     h1{
       display: flex;
       padding-inline-start: 10px;
+      font-size: 30px;
     }
 
     /*conteiners*/
-
+    .main-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
     .grid-conteiner {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      width: 70%;
+      gap: 16px;
+      flex-grow: 1;
+      align-items: start;
+      position: relative;
     }
 
     .conteiner {
       display: flex;
       flex-direction: column;
-      background-color: white;
       width: 200px;
       height: auto;
-      padding: 20px;
-      border-radius: 12px;
-      border: 2px solid transparent;/
     }
 
     .conteiner img {
-      width: 100%;
-      border-radius: 1rem;
+      height: 200px;
+      width: 200px;
       border: 2px solid hsl(20, 50%, 98%);
+      border-radius: 8px;
     }
 
     .conteiner img:hover {
@@ -46,44 +52,60 @@
     }
 
     /* Botão */
-
     .add-to-cart {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      align-self: center;
       background-color: hsl(0, 0%, 100%);
       color: hsl(0, 0%, 0%);
-      padding: 10px 20px;
+      padding: 10px;
       border: 1.5px solid hsl(7, 20%, 60%);
       border-radius: 16px;
       cursor: pointer;
+      width: 150px; 
+      height: 30px;
+      transition: background-color 0.4s, color 0.4s;
       position: relative;
-      width: 200px;
-      height: 40px;
-      transition: background-color 0.3s, color 0.3s; 
+      top: -15px;
+    }
+
+    button .carrinho-img {
+      height: 20px;
+      width: 20px;
+      vertical-align: middle;
+    }
+
+    .button-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .add-to-cart .decrease,
     .add-to-cart .increase,
     .add-to-cart .quantity {
       display: none;
+      border-radius: 1rem;
     }
 
     .add-to-cart:hover .decrease,
     .add-to-cart:hover .increase,
     .add-to-cart:hover .quantity {
       display: inline-block;
+      border-color: hsl(0, 0%, 100%);
     }
 
     .add-to-cart:hover .quantity {
       font-size: 18px;
-      margin: 0 5px;
+      padding: 0 5px;
     }
 
     .add-to-cart .decrease,
     .add-to-cart .increase {
-      width: 20px;
-      height: 20px;
+      width: 10px;
+      height: 10px;
+      padding: 5px;
       margin: 0 10px;
     }
 
@@ -91,38 +113,61 @@
       display: inline-block;
     }
 
-    .add-to-cart:hover .button-text {
+   .add-to-cart:hover .button-text {
       display: none;
     }
 
     .add-to-cart:hover {
       background-color: hsl(14, 86%, 42%);
       color: hsl(0, 0%, 100%);
-      border: none;
     }
 
-    /*Informações*/
-
-    .conteiner .comida {
-      color: hsl(14, 65%, 9%);
+    /*informacoes*/
+    .comida{
+      color: hsl(7, 20%, 60%);
+      margin: 0%;
+      font-size: 14px;
     }
 
-    .conteiner .nome-da-comida {
-      color: hsl(12, 20%, 44%);
+    .nome-da-comida{
+      color: hsl(0, 0%, 0%);
+      margin: 0%;
+      font-size: 16px;
     }
 
-    .conteiner .preco {
+    .preco{
       color: hsl(14, 86%, 42%);
+      margin: 0%;
+      font-size: 16px;
     }
 
     /*Card*/
-
     .card {
-      display: flex;
-      flex-direction: column;
-      background-color: red;
-      width: 200px;
-      padding: 20px;
+      position: absolute;
+      right: 150px; /* Ajuste a distância conforme necessário */
+      top: 75px;
+      width: 300px;
+      height: auto;
+      background-color: hsl(0, 0%, 100%);
+      padding: 25px;
       border-radius: 8px;
-      color: white;
+      text-align: center;
     }
+
+    h2{
+      color: hsl(14, 86%, 42%);
+      position: relative;
+      left: -100px;
+    }
+
+    h3{
+      color: hsl(7, 20%, 60%);
+    }
+
+    .Bolo-de-carregamento{
+      width: 100px;
+      height: 100px;
+    }
+
+    /*menu de compras*/
+    
