@@ -144,20 +144,21 @@
     /*Card*/
     .card {
       position: absolute;
-      right: 150px; /* Ajuste a distância conforme necessário */
+      right: 140px; 
       top: 75px;
-      width: 300px;
+      width: 350px;
       height: auto;
       background-color: hsl(0, 0%, 100%);
-      padding: 25px;
       border-radius: 8px;
       text-align: center;
+      padding: 2px;
     }
 
     h2{
       color: hsl(14, 86%, 42%);
       position: relative;
-      left: -100px;
+      left: -85px;
+      margin-bottom: -1px;
     }
 
     h3{
@@ -170,4 +171,106 @@
     }
 
     /*menu de compras*/
-    
+    .card-list{
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      text-align: start;
+      position: relative;
+      left: -20px;
+      margin-bottom: -20px;
+    }
+
+    hr{
+      border-color: transparent solid 1px;
+      background-color: hsl(0, 0%, 47%);
+      border-radius: 0px;
+      width: 100%;
+      margin-top: -5px;
+    }
+
+    #botao-x {
+      width: 10px;
+      padding: 3px;
+      display: flex;
+      position: relative;
+      left: 290px;
+      top: -25px;
+      border-radius: 20px;
+      border: 2px solid hsl(0, 1%, 64%);
+    }
+
+    #botao-x:hover {
+      border: 2px solid hsl(0, 100%, 49%);
+      background-color: hsl(0, 0%, 100%);
+    }
+
+    .carbon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: hsl(20, 50%, 98%);
+      width: 90%;
+      height: 40px;
+      border-radius: 8px;
+      gap: 5px;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .total{
+      margin: 20px;
+    }
+
+    .order{
+      display: inline;
+      position: relative;
+      right: 75px;
+      font-size: 14px;
+    }
+
+    h4{
+      color: hsl(0, 0%, 0%);
+      display: inline;
+      position: relative;
+      left: 80px;
+      font-size: 22px;
+    }
+
+    .name{
+      color: hsl(0, 0%, 0%);
+      font-size: 14px;
+    }
+
+    .quantidade{
+      color: hsl(14, 86%, 42%);
+      font-size: 12px;
+      display: inline;
+      margin-right: 10px;
+    }
+
+    .price{
+      color: hsl(7, 20%, 60%);
+      font-size: 12px;
+      display: inline;
+    }
+
+    .confirm{
+      width: 90%;
+      height: 45px;
+      margin: 20px;
+      border-radius: 25px;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: hsl(14, 86%, 42%);
+      border: none;
+      color: hsl(0, 0%, 100%);
+    }
+
+    .confirm:hover{
+      background-color: hsl(14, 64%, 58%);
+    }

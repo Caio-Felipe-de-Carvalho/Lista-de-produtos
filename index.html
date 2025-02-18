@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Text:ital,wght@0,600;1,600&family=Young+Serif&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Product list with cart</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,7 +14,7 @@
   <h1>Desserts</h1>
   <div class="main-conteiner">
       <div class="grid-conteiner">
-        <div class="conteiner">
+        <div class="conteiner" data-product-name="Waffle with Berries" data-product-price="6.50">
           <img src="assets/images/image-waffle-desktop.jpg" alt="cart-comida">
           <button class="add-to-cart">
             <img src="assets/images/icon-decrement-quantity.svg" alt="Decrease" class="decrease">
@@ -22,10 +25,10 @@
           
           <p class="comida">Waffle</p>
           <p class="nome-da-comida">Waffle with Berries</p>
-          <p class="preco">6.50</p>
+          <p class="preco">$6.50</p>
         </div>
 
-        <div class="conteiner">
+        <div class="conteiner" data-product-name="Crème Brûlée" data-product-price="7.00">
           <img src="assets/images/image-creme-brulee-desktop.jpg" alt="cart-comida">
           <button class="add-to-cart">
             <img src="assets/images/icon-decrement-quantity.svg" alt="Decrease" class="decrease">
@@ -36,10 +39,10 @@
           
           <p class="comida">Crème Brûlée</p>
           <p class="nome-da-comida">Vanilla Bean Crème Brûlée</p>
-          <p class="preco">7.00</p>
+          <p class="preco">$7.00</p>
         </div>
 
-        <div class="conteiner">
+        <div class="conteiner" data-product-name="Macaron Mix of Five" data-product-price="8.00">
           <img src="assets/images/image-macaron-desktop.jpg" alt="cart-comida">
           <button class="add-to-cart">
             <img src="assets/images/icon-decrement-quantity.svg" alt="Decrease" class="decrease">
@@ -50,10 +53,10 @@
           
           <p class="comida">Macaron</p>
           <p class="nome-da-comida">Macaron Mix of Five</p>
-          <p class="preco">8.00</p>
+          <p class="preco">$8.00</p>
         </div>
 
-        <div class="conteiner">
+        <div class="conteiner" data-product-name="Classic Tiramisu" data-product-price="5.50">
           <img src="assets/images/image-tiramisu-desktop.jpg" alt="cart-comida">
           <button class="add-to-cart">
             <img src="assets/images/icon-decrement-quantity.svg" alt="Decrease" class="decrease">
@@ -64,10 +67,10 @@
           
           <p class="comida">Tiramisu</p>
           <p class="nome-da-comida">Classic Tiramisu</p>
-          <p class="preco">5.50</p>
+          <p class="preco">$5.50</p>
         </div>
 
-        <div class="conteiner">
+        <div class="conteiner" data-product-name="Pistachio Baklava" data-product-price="4.00">
           <img src="assets/images/image-baklava-desktop.jpg" alt="cart-comida">
           <button class="add-to-cart">
             <img src="assets/images/icon-decrement-quantity.svg" alt="Decrease" class="decrease">
@@ -78,10 +81,10 @@
           
           <p class="comida">Baklava</p>
           <p class="nome-da-comida">Pistachio Baklava</p>
-          <p class="preco">4.00</p>
+          <p class="preco">$4.00</p>
         </div>
 
-        <div class="conteiner">
+        <div class="conteiner" data-product-name="Lemon Meringue Pie" data-product-price="5.00">
           <img src="assets/images/image-meringue-desktop.jpg" alt="cart-comida">
           <button class="add-to-cart">
             <img src="assets/images/icon-decrement-quantity.svg" alt="Decrease" class="decrease">
@@ -92,10 +95,10 @@
           
           <p class="comida">Pie</p>
           <p class="nome-da-comida">Lemon Meringue Pie</p>
-          <p class="preco">5.00</p>
+          <p class="preco">$5.00</p>
         </div>
 
-        <div class="conteiner">
+        <div class="conteiner" data-product-name="Red Velvet Cake" data-product-price="4.50">
           <img src="assets/images/image-cake-desktop.jpg" alt="cart-comida">
           <button class="add-to-cart">
             <img src="assets/images/icon-decrement-quantity.svg" alt="Decrease" class="decrease">
@@ -104,12 +107,12 @@
             <span class="button-text"><img src="assets/images/icon-add-to-cart.svg" alt="carrinho" class="carrinho-img"> Add to Cart</span>
           </button>
           
-          <p class="comida">Red Velvet Cake</p>
-          <p class="nome-da-comida">Cake</p>
-          <p class="preco">4.50</p>
+          <p class="comida">Cake</p>
+          <p class="nome-da-comida">Red Velvet Cake</p>
+          <p class="preco">$4.50</p>
         </div>
   
-      <div class="conteiner">
+      <div class="conteiner" data-product-name="Salted Caramel Browie" data-product-price="5.50">
         <img src="assets/images/image-brownie-desktop.jpg" alt="cart-comida">
         <button class="add-to-cart">
           <img src="assets/images/icon-decrement-quantity.svg" alt="Decrease" class="decrease">
@@ -120,10 +123,10 @@
         
         <p class="comida">Browie</p>
         <p class="nome-da-comida">Salted Caramel Browie</p>
-        <p class="preco">5.50</p>
+        <p class="preco">$5.50</p>
       </div>
   
-    <div class="conteiner">
+    <div class="conteiner" data-product-name="Vannila Pana Cotta" data-product-price="6.50">
       <img src="assets/images/image-panna-cotta-desktop.jpg" alt="cart-comida">
       <button class="add-to-cart">
         <img src="assets/images/icon-decrement-quantity.svg" alt="Decrease" class="decrease">
@@ -134,7 +137,7 @@
       
       <p class="comida">Panna-cotta</p>
       <p class="nome-da-comida">Vannila Pana Cotta</p>
-      <p class="preco">6.50</p>
+      <p class="preco">$6.50</p>
     </div>
   </div>
 
