@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const cart = [];
   const cartElement = document.querySelector('.card');
   const products = document.querySelectorAll('.conteiner');
+  const confirmButton = document.querySelector('.confirm');
+  const dialog = document.createElement('dialog');
+  dialog.classList.add('modal');
+  document.body.appendChild(dialog);
 
   products.forEach(product => {
     const decreaseButton = product.querySelector('.decrease');
@@ -51,33 +55,105 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderCart() {
     cartElement.innerHTML = `
       <h2>Seu Carrinho (${cart.reduce((acc, item) => acc + item.quantity, 0)})</h2>
-
       <div class="card-list">
-      <ul>
-        ${cart.map(item => `
-          <none>
-            <p class="name">${item.name} </p>
-            <p class="quantidade">${item.quantity}x</p> <p class="price">@$${item.price} $${item.totalPrice} </p>
-            <img src="assets/images/icon-remove-item.svg" id="botao-x">
-            <hr>
-          </none>
-        `).join('')}
-      </ul>
+        <ul>
+          ${cart.map(item => `
+            <li>
+              <p class="name">${item.name}</p>
+              <p class="quantidade">${item.quantity}x</p>
+              <p class="price">@R$${item.price} R$${item.totalPrice}</p>
+              <button class="remove-button" data-product-name="${item.name}">
+                <img src="assets/images/icon-remove-item.svg" alt="Remover item">
+              </button>
+              <hr>
+            </li>
+          `).join('')}
+        </ul>
       </div>
-
-        <div class="total"> 
-        <span class="order">Order Total</span>
-         ${cart.length > 0 ? `<h4>R$${cart.reduce((acc, item) => acc + parseFloat(item.totalPrice), 0).toFixed(2)}</h4>` : ''}
-        </div>
-
+      <div class="total">
+        <span class="order">Total do Pedido</span>
+        ${cart.length > 0 ? `<h4>R$${cart.reduce((acc, item) => acc + parseFloat(item.totalPrice), 0).toFixed(2)}</h4>` : ''}
+      </div>
       <div class="carbon">
-      <img src="assets/images/icon-carbon-neutral.svg">
-      This is <strong>carbon-neutral</strong> delivery
+        <img src="assets/images/icon-carbon-neutral.svg" alt="Entrega neutra em carbono">
+        Esta é uma entrega <strong>neutra em carbono</strong>
       </div>
-
       <div class="confirm">
-      Confirm Order
+        Confirmar Pedido
       </div>
     `;
+
+    const removeButtons = cartElement.querySelectorAll('.remove-button');
+    removeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const productName = button.getAttribute('data-product-name');
+        removeFromCart(productName);
+      });
+    });
+
+    const confirmButton = cartElement.querySelector('.confirm');
+    if (confirmButton) {
+      confirmButton.addEventListener('click', () => {
+        if (cart.length > 0) {
+          showDialog();
+        } else {
+          alert('Seu carrinho está vazio.');
+        }
+      });
+    }
+  }
+
+  function removeFromCart(productName) {
+    const productIndex = cart.findIndex(item => item.name === productName);
+    if (productIndex !== -1) {
+      cart.splice(productIndex, 1);
+
+      const product = Array.from(products).find(prod => prod.getAttribute('data-product-name') === productName);
+      if (product) {
+        const quantityDisplay = product.querySelector('.quantity');
+        quantityDisplay.innerText = '0';
+   
+        const increaseButton = product.querySelector('.increase');
+        increaseButton.addEventListener('click', () => {
+          let quantity = parseInt(quantityDisplay.innerText);
+          quantity++;
+          quantityDisplay.innerText = quantity;
+          updateCart(product, quantity);
+        });
+      }
+      renderCart();
+    }
+  }
+
+  function showDialog() {
+    dialog.innerHTML = `
+      <h2>Confirmação de Pedido</h2>
+      <p>Deseja confirmar seu pedido com os seguintes itens?</p>
+      <ul>
+        ${cart.map(item => `
+          <li>${item.quantity}x ${item.name} - R$${item.totalPrice}</li>
+        `).join('')}
+      </ul>
+      <div class="dialog-buttons">
+        <button id="confirm-order">Confirmar</button>
+        <button id="cancel-order">Cancelar</button>
+      </div>
+    `;
+    dialog.showModal();
+
+    document.getElementById('confirm-order').addEventListener('click', () => {
+      alert('Pedido confirmado!');
+      dialog.close();
+    });
+
+    document.getElementById('cancel-order').addEventListener('click', () => {
+      dialog.close();
+    });
+
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) {
+        dialog.close();
+      }
+    });
   }
 });
