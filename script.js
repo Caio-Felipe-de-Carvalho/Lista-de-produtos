@@ -70,14 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
           `).join('')}
         </ul>
       </div>
+
       <div class="total">
         <span class="order">Total do Pedido</span>
         ${cart.length > 0 ? `<h4>R$${cart.reduce((acc, item) => acc + parseFloat(item.totalPrice), 0).toFixed(2)}</h4>` : ''}
       </div>
+
       <div class="carbon">
         <img src="assets/images/icon-carbon-neutral.svg" alt="Entrega neutra em carbono">
         Esta é uma entrega <strong>neutra em carbono</strong>
       </div>
+
       <div class="confirm">
         Confirmar Pedido
       </div>
@@ -112,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (product) {
         const quantityDisplay = product.querySelector('.quantity');
         quantityDisplay.innerText = '0';
-   
+
         const increaseButton = product.querySelector('.increase');
         increaseButton.addEventListener('click', () => {
           let quantity = parseInt(quantityDisplay.innerText);
@@ -127,17 +130,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showDialog() {
     dialog.innerHTML = `
-      <h2>Confirmação de Pedido</h2>
-      <p>Deseja confirmar seu pedido com os seguintes itens?</p>
-      <ul>
-        ${cart.map(item => `
-          <li>${item.quantity}x ${item.name} - R$${item.totalPrice}</li>
-        `).join('')}
-      </ul>
-      <div class="dialog-buttons">
-        <button id="confirm-order">Confirmar</button>
-        <button id="cancel-order">Cancelar</button>
+    <div class="dialog">
+      <img src="assets/images/icon-order-confirmed.svg" alt="confirmacao">
+      <h5>Order confirmed</h5>
+      <h6>Seu Carrinho</h6>
+
+      <div class="card-list2">
+        <ul>
+          ${cart.map(item => `
+            <li>
+              <img class="product-image" src="./assets/images/image">
+              <p class="name2">${item.name}</p>
+              <p class="quantidade2">${item.quantity}x</p>
+              <p class="price2">@R$${item.price} R$${item.totalPrice}</p>
+              <hr class="linha">
+            </li>
+          `).join('')}
+          <div class="total">
+              <span class="order">Total do Pedido</span>
+              ${cart.length > 0 ? `<h4>R$${cart.reduce((acc, item) => acc + parseFloat(item.totalPrice), 0).toFixed(2)}</h4>` : ''}
+          </div>
+        </ul>
       </div>
+      <div class="confirm" id="confirm-order">Confirmar Pedido</div>
+      <div class="cancel" id="cancel-order">Cancelar</div>
+    </div>
     `;
     dialog.showModal();
 
@@ -157,3 +174,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
