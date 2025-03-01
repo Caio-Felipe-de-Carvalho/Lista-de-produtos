@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <img class="product-image" src="./assets/images/image">
               <p class="name2">${item.name}</p>
               <p class="quantidade2">${item.quantity}x</p>
-              <p class="price2">@R$${item.price} R$${item.totalPrice}</p>
+              <p class="price2">@R$${item.price}</p> <p class="totalprice">R$${item.totalPrice}</p>
               <hr class="linha">
             </li>
           `).join('')}
@@ -153,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>
       </div>
       <div class="confirm" id="confirm-order">Confirmar Pedido</div>
-      <div class="cancel" id="cancel-order">Cancelar</div>
     </div>
     `;
     dialog.showModal();
