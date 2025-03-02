@@ -146,13 +146,13 @@ document.addEventListener('DOMContentLoaded', () => {
               <hr class="linha">
             </li>
           `).join('')}
-          <div class="total">
-              <span class="order">Total do Pedido</span>
+          <div class="total2">
+              <span class="order2">Total do Pedido</span>
               ${cart.length > 0 ? `<h4>R$${cart.reduce((acc, item) => acc + parseFloat(item.totalPrice), 0).toFixed(2)}</h4>` : ''}
           </div>
         </ul>
       </div>
-      <div class="confirm" id="confirm-order">Confirmar Pedido</div>
+      <div class="confirm2" id="confirm-order">Confirmar Pedido</div>
     </div>
     `;
     dialog.showModal();

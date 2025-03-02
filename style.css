@@ -126,19 +126,19 @@
     /*informacoes*/
     .comida{
       color: hsl(7, 20%, 60%);
-      margin: 0%;
+      margin: 0px;
       font-size: 14px;
     }
 
     .nome-da-comida{
       color: hsl(0, 0%, 0%);
-      margin: 0%;
+      margin: 0px;
       font-size: 16px;
     }
 
     .preco{
       color: hsl(14, 86%, 42%);
-      margin: 0%;
+      margin: 0px;
       font-size: 16px;
     }
 
@@ -157,7 +157,7 @@
 
     h2{
       color: hsl(14, 86%, 42%);
-      margin-bottom: -20px;
+      margin-bottom: 20px;
       text-align: start;
       padding: 10px;
     }
@@ -180,8 +180,6 @@
       text-align: start;
       position: relative;
       left: -20px;
-      margin-bottom: -20px;
-      margin: 1px;
     }
 
     hr{
@@ -189,7 +187,8 @@
       background-color: hsl(13, 31%, 94%);
       border-radius: 0px;
       width: 100%;
-      margin: -3px 0;
+      margin-top: -10px;
+      margin-bottom: 40px;
     }
 
     .remove-button {
@@ -218,7 +217,8 @@
       align-items: center;
       width: 100%;
       position: static;
-      margin: -15px -25px;
+      margin-top: -60px;
+      margin-bottom: -10px;
     }
 
     .carbon{
@@ -235,13 +235,15 @@
     .order{
       font-size: 14px;
       display: inline;
-      margin-left: 50px;
+      margin-left: 20px;
     }
 
     h4{
       color: hsl(0, 0%, 0%);
       font-size: 22px;
       display: inline;
+      position: relative;
+      right: 20px;
     }
 
     .name{
@@ -265,7 +267,7 @@
     .confirm{
       width: 90%;
       height: 45px;
-      margin: 20px;
+      margin: 20px 20px;
       border-radius: 25px;
       font-size: 16px;
       display: flex;
@@ -303,12 +305,12 @@
 
     h6{
       font-size: 14px;
-      margin: 1px 0px 20px 0px;
+      margin: 10px 0px 40px 0px;
       color: hsl(14, 25%, 72%);
     }
 
     li, .product-image{
-      margin-top: -20px;
+      margin-top: -30px;
     }
 
     .card-list2{
@@ -318,15 +320,17 @@
       justify-content: center;
       text-align: center;
       border-radius: 20px;
+      margin: 1px 0px;
     }
 
     .product-image {
       width: 40px;
       height: 40px;
       position: relative;
+      border-radius: 10px;
       right: 211px;
-      top: 60px;
-      padding: 10px;
+      top: 65px;
+      padding: 1px 0px 15px 0px;
     }
 
     .name2{
@@ -335,6 +339,7 @@
       position: relative;
       left: 45px;
       text-align: left;
+      margin-bottom: 5px;
     }
 
     .quantidade2{
@@ -352,6 +357,7 @@
       display: inline;
       position: relative;
       right: 115px;
+      margin: 0px;
     }
     
     .totalprice{
@@ -361,17 +367,55 @@
       position: relative;
       left: 140px;
     }
+
+    .total2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      position: static;
+      margin-top: -20px;
+      margin-bottom: -10px;
+    }
+    
+    .order2{
+      font-size: 14px;
+      display: inline;
+    }
+
+    h4{
+      color: hsl(0, 0%, 0%);
+      font-size: 22px;
+      display: inline;
+      position: relative;
+      right: 20px;
+    }
    
     .linha{
       border-color: transparent 1px;
       background-color: hsl(15, 100%, 99%);
       border-radius: 0px;
       width: 100%;
-      margin: 10px -20px;
+      margin: 12px -20px;
       display: flex;
       flex-direction: column;
       justify-content: start;
       align-items: start;
+    }
+
+    .confirm2{
+      width: 100%;
+      height: 45px;
+      margin: 20px 0px;
+      border-radius: 25px;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: hsl(14, 86%, 42%);
+      border: none;
+      color: hsl(0, 0%, 100%);
     }
     
     menu {
