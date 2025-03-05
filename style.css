@@ -25,16 +25,15 @@ h1{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  flex-grow: 1;
+  width: 100%;
   align-items: start;
-  position: relative;
 }
 
 .conteiner {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 100%;
+  width: 98%;
 }
 
 .conteiner img {
@@ -117,6 +116,7 @@ button .carrinho-img {
 
 .add-to-cart:hover {
   background-color: hsl(14, 86%, 42%);
+  border-color: hsl(14, 86%, 42%);
   color: hsl(0, 0%, 100%);
 }
 
@@ -143,14 +143,15 @@ button .carrinho-img {
 /*Card*/
 .card {
   position: absolute;
-  right: 140px; 
+  right: 100px; 
   top: 75px;
   width: 350px;
   height: auto;
   background-color: hsl(0, 0%, 100%);
   border-radius: 8px;
   text-align: center;
-  padding: 2px;
+  padding: 0;
+  margin: 0;
 }
 
 h2{
@@ -284,21 +285,33 @@ h4{
 
 /*dialogo*/
 dialog::backdrop {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6); /* Aumentei a opacidade para 0.7 */
+}
+
+html, body {
+  overflow-x: hidden; 
+  max-width: 100%;
 }
 
 dialog {
-  position: absolute;
-  margin: 1px;
-  top: 85%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 40%;
   max-height: 1000px;
-  padding: 30px 45px;
+  width: 500px;
+  position: absolute;
+  padding: 40px;
+  left: 40%;
+  transform: translateX(-50%);
+  border-radius: 16px;
   background: hsl(0, 0%, 100%);
   border: none;
-  border-radius: 8px;
+  outline: none;
+  display: hide;
+  margin-top: 20px;
+}
+
+/* Garante que o conteúdo não tenha scroll interno */
+dialog[open] {
+  position: relative;
+  overflow: visible;
 }
 
 h5{
@@ -320,6 +333,7 @@ li, .product-image{
 .card-list2{
   background-color: hsl(20, 50%, 98%);
   display: flex;
+  height: auto;
   flex-direction: column;
   justify-content: center;
   text-align: center;
@@ -332,7 +346,7 @@ li, .product-image{
   height: 40px;
   position: relative;
   border-radius: 10px;
-  right: 247px;
+  right: 220px;
   top: 65px;
   padding: 1px 0px 15px 0px;
 }
@@ -369,7 +383,7 @@ li, .product-image{
   color: hsl(0, 0%, 0%);
   text-align: center;
   position: relative;
-  left: 165px;
+  left: 108px;
 }
 
 .total2 {
@@ -424,50 +438,35 @@ h4{
   color: hsl(0, 0%, 100%);
 }
 
-menu {
-  display: flex;
-  justify-content: flex-end;
+/* Media Query para dispositivos móveis */
+@media(max-width: 768px){
+  body{
+  margin: 30px;
+  width: 50vh;
 }
 
-@media(max-width: 768px){
-    body{
-      margin: 30px;
-      width: 50vh;
-    }
+.main-container {
+  flex-direction: column;
+  align-items: center;
+}
+  
+.grid-conteiner {
+  grid-template-columns: repeat(1, 1fr); 
+}
+  
+.card {
+  position: static;
+  width: 100%;
+  margin-top: 20px;
+}
 
-    .main-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .grid-conteiner {
-      grid-template-columns: repeat(1, 1fr); /* Reduz para duas colunas */
-    }
-  
-    .card {
-      position: static; /* Remove o posicionamento absoluto */
-      width: 100%; /* Ocupa a largura total */
-      margin-top: 20px; /* Adiciona um espaçamento */
-    }
-    dialog {
-      width: 100%;
-      height: auto;
-      max-height: 80vh; /* Evita que fique muito grande */
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      border-radius: 16px 16px 0 0; /* Arredondado no topo */
-      padding: 20px;
-      background: white;
-      box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
-      transform: translateY(100%); /* Escondido por padrão */
-      transition: transform 0.3s ease-in-out;
-    }
-  
-    dialog[open] {
-      transform: translateY(0); /* Aparece ao abrir */
-      max-height: 100vh;
-      height: 100%;
-      border-radius: 0; /* Expande totalmente */
-    }
-  } 
+dialog {
+  width: 50vh;
+  left: 0;
+  transform: translateY(100%);
+}
+
+dialog[open] {
+  transform: translateY(0);
+}
+}

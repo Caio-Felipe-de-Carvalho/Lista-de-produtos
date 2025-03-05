@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderCart() {
     cartElement.innerHTML = `
-      <h2>Seu Carrinho (${cart.reduce((acc, item) => acc + item.quantity, 0)})</h2>
+      <h2>Your Cart (${cart.reduce((acc, item) => acc + item.quantity, 0)})</h2>
       <div class="card-list">
         <ul>
           ${cart.map(item => `
@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showDialog() {
     dialog.innerHTML = `
-    <div class="dialog">
       <img src="assets/images/icon-order-confirmed.svg" alt="confirmacao">
       <h5>Order confirmed</h5>
       <h6>Seu Carrinho</h6>
@@ -153,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>
       </div>
       <div class="confirm2" id="confirm-order">Confirmar Pedido</div>
-    </div>
     `;
     dialog.showModal();
 
